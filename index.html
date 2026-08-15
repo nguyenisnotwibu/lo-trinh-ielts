@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lộ trình IELTS Lớp 8 → Lớp 10 · Mục tiêu 6.5</title>
+<style>
+  :root{
+    --navy:#1f3864; --blue:#2e5496; --sky:#4a90d9; --accent:#e07b39;
+    --green:#3c9d6e; --greenbg:#e7f4ec; --bg:#f4f7fc; --card:#ffffff;
+    --ink:#22303f; --muted:#6b7891; --line:#e2e8f4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  header.hero{background:linear-gradient(135deg,#1f3864 0%,#2e5496 55%,#4a90d9 100%);
+    color:#fff;padding:40px 0 88px;position:relative;overflow:hidden}
+  header.hero:before{content:"";position:absolute;top:-60px;right:-40px;width:280px;height:280px;
+    background:rgba(255,255,255,.08);border-radius:50%}
+  header.hero:after{content:"";position:absolute;bottom:-90px;left:-30px;width:220px;height:220px;
+    background:rgba(255,255,255,.06);border-radius:50%}
+  .hero .wrap{position:relative;z-index:2}
+  .eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;font-weight:600}
+  h1{font-size:34px;margin:8px 0 6px;font-weight:800;line-height:1.15}
+  .sub{font-size:17px;opacity:.92;max-width:640px}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);
+    padding:7px 14px;border-radius:30px;font-size:13.5px;font-weight:600;backdrop-filter:blur(4px)}
+  .badge b{color:#ffd8a8}
+  .panel{background:var(--card);border-radius:18px;box-shadow:0 12px 34px rgba(31,56,100,.14);
+    margin-top:-58px;position:relative;z-index:5;padding:22px 24px;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:22px;align-items:center}
+  .prog-label{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+  .prog-num{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
+  .bar{height:14px;background:#eef2f9;border-radius:10px;overflow:hidden;margin-top:10px}
+  .bar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#3c9d6e,#5bc48c);
+    border-radius:10px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .stat{text-align:center;border-left:1px solid var(--line);padding-left:18px}
+  .stat .big{font-size:26px;font-weight:800;color:var(--accent)}
+  .stat .cap{font-size:12.5px;color:var(--muted);font-weight:600}
+  section{padding:34px 0 8px}
+  .sec-title{font-size:23px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:10px}
+  .sec-title .dot{width:11px;height:22px;background:var(--accent);border-radius:4px}
+  .sec-desc{color:var(--muted);margin:6px 0 18px;font-size:15px}
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pcard{background:var(--card);border-radius:14px;padding:18px 16px;border-top:5px solid;
+    box-shadow:0 4px 14px rgba(31,56,100,.07);transition:transform .2s,box-shadow .2s}
+  .pcard:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(31,56,100,.14)}
+  .pcard .ph{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+  .pcard .grade{font-size:20px;font-weight:800;margin:2px 0}
+  .pcard .band{display:inline-block;font-size:13px;font-weight:800;color:#fff;padding:3px 11px;
+    border-radius:20px;margin:6px 0 10px}
+  .pcard p{font-size:13.5px;color:#4a5568}
+  .pcard .yr{font-size:12.5px;color:var(--muted);margin-top:8px;font-weight:600}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .fbtn{border:1.5px solid var(--line);background:#fff;color:var(--muted);font-weight:600;
+    padding:7px 15px;border-radius:22px;cursor:pointer;font-size:13.5px;transition:.15s}
+  .fbtn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .tl{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .m{background:var(--card);border-radius:12px;padding:14px 16px 14px 46px;position:relative;
+    box-shadow:0 3px 10px rgba(31,56,100,.06);border-left:4px solid var(--line);transition:.2s}
+  .m.done{background:var(--greenbg);border-left-color:var(--green)}
+  .m .chk{position:absolute;left:13px;top:15px;width:22px;height:22px;border-radius:6px;
+    border:2px solid #c3cde0;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:14px;color:#fff;background:#fff;transition:.15s;user-select:none}
+  .m.done .chk{background:var(--green);border-color:var(--green)}
+  .m .mo{font-weight:800;font-size:15px;color:var(--navy)}
+  .m .gr{font-size:11.5px;font-weight:700;color:#fff;padding:1px 8px;border-radius:12px;margin-left:6px}
+  .m .fo{font-size:13px;color:#4a5568;margin-top:5px}
+  .m .ms{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:8px;
+    background:#eef2f9;color:var(--blue)}
+  .m .ms.test{background:#fff2e6;color:var(--accent);border:1px solid #f6d3b3}
+  .m .ms.exam{background:#e07b39;color:#fff}
+  .m.done .mo:after{content:" ✓";color:var(--green)}
+  .mockwrap{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 4px 14px rgba(31,56,100,.07)}
+  .legend{display:flex;gap:18px;font-size:13px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  .tips{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tip{background:var(--card);border-radius:12px;padding:16px 18px;box-shadow:0 3px 10px rgba(31,56,100,.06);
+    border-left:4px solid #f2a154}
+  .tip h4{font-size:15px;color:var(--navy);margin-bottom:6px}
+  .tip p{font-size:13.5px;color:#4a5568}
+  .toolbar{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+  .tb{border:none;background:var(--navy);color:#fff;padding:9px 18px;border-radius:9px;font-weight:600;
+    cursor:pointer;font-size:13.5px}
+  .tb.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
+  .note{background:#fff7ec;border:1px solid #f6d3b3;border-radius:10px;padding:12px 16px;font-size:13.5px;
+    color:#8a5a2b;margin-top:14px}
+  @media(max-width:760px){
+    .panel{grid-template-columns:1fr;gap:14px}.stat{border-left:none;border-top:1px solid var(--line);padding:12px 0 0}
+    .phases{grid-template-columns:1fr}.tl{grid-template-columns:1fr}.tips{grid-template-columns:1fr}
+    h1{font-size:27px}
+  }
+  @media print{.toolbar,.filters{display:none}header.hero{padding-bottom:40px}.panel{margin-top:16px;box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Lộ trình học tập tăng tốc</div>
+    <h1>IELTS Lớp 8 → Lớp 10 · Mục tiêu <span style="color:#ffd8a8">6.5</span></h1>
+    <p class="sub">Bảng theo dõi trực quan dành cho phụ huynh — bám sát tiến độ từng tháng, lịch thi thử và mục tiêu điểm. Tick vào mỗi tháng khi con hoàn thành.</p>
+    <div class="badges">
+      <div class="badge">🎯 Mục tiêu: <b>IELTS 6.5</b></div>
+      <div class="badge">📚 Xuất phát: <b>lớp 8, nền cơ bản</b></div>
+      <div class="badge">⏱️ <b>~4–5 giờ/tuần</b> (lớp 10: 6–8)</div>
+      <div class="badge">🗓️ <b>2026 → 2029</b> (~2,5 năm)</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="panel">
+    <div>
+      <div class="prog-label">Tiến độ tổng thể</div>
+      <div><span class="prog-num" id="pct">0%</span> <span style="color:var(--muted);font-size:14px">hoàn thành</span></div>
+      <div class="bar"><span id="barfill"></span></div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:7px"><span id="donecount">0</span>/<span id="total">0</span> tháng đã tick</div>
+    </div>
+    <div class="stat">
+      <div class="big" id="countdown">—</div>
+      <div class="cap">tháng đến kỳ thi thật<br>(dự kiến 02/2029)</div>
+    </div>
+    <div class="stat">
+      <div class="big">7 + 1</div>
+      <div class="cap">bài mock trước khi<br>thi thật</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="sec-title"><span class="dot"></span>3 giai đoạn của hành trình</div>
+    <div class="sec-desc">Vì thời gian gọn (~2,5 năm) và nền còn yếu, năm lớp 8 tập trung xây nền thật chắc, rồi tăng tốc dần. Đều đặn mỗi ngày là yếu tố quyết định.</div>
+    <div class="phases" id="phases"></div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Tiến độ theo tháng</div>
+    <div class="sec-desc">Nhấn vào ô vuông để đánh dấu tháng đã hoàn thành. Tiến độ tổng phía trên sẽ tự cập nhật.</div>
+    <div class="filters" id="filters">
+      <button class="fbtn active" data-f="all">Tất cả</button>
+      <button class="fbtn" data-f="Lớp 8">Lớp 8</button>
+      <button class="fbtn" data-f="Lớp 9">Lớp 9</button>
+      <button class="fbtn" data-f="Lớp 10">Lớp 10</button>
+      <button class="fbtn" data-f="test">Chỉ mốc thi/kiểm tra</button>
+    </div>
+    <div class="tl" id="timeline"></div>
+    <div class="toolbar">
+      <button class="tb ghost" onclick="markTerm()">✓ Tick nhanh đến tháng hiện tại</button>
+      <button class="tb ghost" onclick="resetAll()">↺ Đặt lại</button>
+      <button class="tb" onclick="window.print()">🖨️ In / Lưu PDF</button>
+    </div>
+    <div class="note">💡 <b>Mẹo cho phụ huynh:</b> mỗi tháng dành 2 phút mở bảng này, cùng con tick lại tháng vừa qua và xem mục tiêu tháng tới. Sau mỗi bài mock, đừng quên <b>1 tuần ôn (revise)</b> để chữa lỗi — đây là phần quyết định điểm có lên hay không.</div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Đường cong điểm mục tiêu qua các bài mock</div>
+    <div class="sec-desc">Kỳ vọng điểm tăng dần qua từng bài thi thử. Anh/chị ghi điểm thực tế vào file Excel để so sánh với đường mục tiêu này.</div>
+    <div class="mockwrap">
+      <div id="chart"></div>
+      <div class="legend">
+        <span><i style="background:#4a90d9"></i>Band mục tiêu kỳ vọng</span>
+        <span><i style="background:#e07b39"></i>Mốc 6.5 (đích)</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Bí quyết đi đường dài</div>
+    <div class="tips">
+      <div class="tip"><h4>⏳ Đều đặn thắng cường độ</h4><p>30 phút mỗi ngày hiệu quả hơn nhiều so với dồn 5 tiếng cuối tuần rồi bỏ bê. Thói quen mới là chìa khóa.</p></div>
+      <div class="tip"><h4>🎬 Biến tiếng Anh thành sở thích</h4><p>Xem phim, nghe nhạc, chơi game, đọc truyện bằng tiếng Anh — học mà không thấy "học".</p></div>
+      <div class="tip"><h4>✍️ Writing & Speaking cần người chấm</h4><p>Từ lớp 9 nên có gia sư/trung tâm cho 2 kỹ năng này — tự học rất khó lên band.</p></div>
+      <div class="tip"><h4>📓 Giữ "sổ lỗi"</h4><p>Sau mỗi mock, ghi 5–10 lỗi hay mắc nhất và ôn lại. Đây là bí quyết khiến điểm thật sự tăng.</p></div>
+      <div class="tip"><h4>🚀 Tăng tốc ở lớp 10</h4><p>Vì thời gian gọn, nếu con theo kịp nên nâng lên 6–8 giờ/tuần trong năm lớp 10 để chắc chắn đạt 6.5.</p></div>
+      <div class="tip"><h4>🔄 Linh hoạt điều chỉnh</h4><p>Con tiến nhanh → thi sớm. Nếu nền chưa vững ở cuối lớp 9 → kéo dài giai đoạn nền, dời lịch thi. Sức khỏe & động lực quan trọng hơn mốc cứng.</p></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  Bảng theo dõi lộ trình IELTS · Học sinh lớp 8 (nền cơ bản) · Năm học 2026–2029<br>
+  Đi kèm file Word (chi tiết) và file Excel (theo dõi hàng tuần, hàng tháng & bảng điểm mock).
+</footer>
+
+<script>
+const G={ "GĐ 0":"#5b7fbf","GĐ 1":"#3c9d6e","GĐ 2":"#e07b39" };
+const phases=[
+  {ph:"Giai đoạn 0",grade:"Lớp 8 · Nền tảng",band:"~3.5–4.0",yr:"9/2026 – 5/2027",c:"#5b7fbf",
+   d:"Xây nền thật chắc: từ vựng cơ bản, ngữ pháp nền, phát âm IPA, nghe/đọc dễ. Cuối năm chạm ngưỡng A2 vững/B1. <b>Chưa luyện đề IELTS.</b>"},
+  {ph:"Giai đoạn 1",grade:"Lớp 9 · Vào IELTS",band:"~5.0–5.5",yr:"9/2027 – 5/2028",c:"#3c9d6e",
+   d:"Ngữ pháp trung cấp + học định dạng & chiến thuật cả 4 kỹ năng IELTS. Bắt đầu mock đầy đủ."},
+  {ph:"Giai đoạn 2",grade:"Lớp 10 · Luyện thi 6.5",band:"6.5",yr:"9/2028 – 3/2029",c:"#e07b39",
+   d:"Luyện đề cường độ cao, bấm giờ, tối ưu Writing & Speaking. <b>Thi thật (mục tiêu 6.5).</b>"},
+];
+// [month, grade, phase, focus, milestone, type]
+const months=[
+ // Lớp 8 — Nền tảng
+ ["9/2026","Lớp 8","GĐ 0","Phát âm IPA + 200 từ cơ bản; thì hiện tại đơn.","Placement CEFR đầu vào","test"],
+ ["10/2026","Lớp 8","GĐ 0","Hiện tại tiếp diễn; từ vựng gia đình, trường học.","Mini-test tháng",""],
+ ["11/2026","Lớp 8","GĐ 0","Quá khứ đơn; từ vựng sở thích, đồ ăn.","Mini-test tháng",""],
+ ["12/2026","Lớp 8","GĐ 0","Tương lai; danh/động/tính từ. Ôn học kỳ 1.","Placement CEFR giữa kỳ","test"],
+ ["1/2027","Lớp 8","GĐ 0","So sánh hơn/nhất; từ vựng du lịch.","Mini-test tháng",""],
+ ["2/2027","Lớp 8","GĐ 0","Giới từ, mạo từ; nghe hội thoại chậm.","Mini-test tháng",""],
+ ["3/2027","Lớp 8","GĐ 0","Câu ghép, thì hoàn thành cơ bản; graded reader.","Mini-test tháng",""],
+ ["4/2027","Lớp 8","GĐ 0","Câu điều kiện, bị động cơ bản; viết câu đúng.","Mini-test tháng",""],
+ ["5/2027","Lớp 8","GĐ 0","Tổng ôn nền; luyện nói shadowing.","Placement cuối năm → A2 vững/B1","test"],
+ // Lớp 9 — Vào IELTS
+ ["9/2027","Lớp 9","GĐ 1","Ngữ pháp trung cấp: mệnh đề quan hệ, câu phức.","Placement đầu năm","test"],
+ ["10/2027","Lớp 9","GĐ 1","Listening: định dạng & dạng câu hỏi; từ học thuật.","Test kỹ năng: Listening","test"],
+ ["11/2027","Lớp 9","GĐ 1","Reading: skimming/scanning, T/F/NG; viết đoạn.","Mini-test tháng",""],
+ ["12/2027","Lớp 9","GĐ 1","Writing Task 1: mô tả biểu đồ. Ôn HK1.","Test kỹ năng: Reading","test"],
+ ["1/2028","Lớp 9","GĐ 1","Writing Task 2: bài luận ý kiến.","★ MOCK #1 (Cam 15) + REVISE → ~4.5–5.0","test"],
+ ["2/2028","Lớp 9","GĐ 1","Speaking 3 part; kho ý tưởng theo topic.","Test kỹ năng: Speaking","test"],
+ ["3/2028","Lớp 9","GĐ 1","Luyện dạng L+R nâng cao; collocation.","Mini-test tháng",""],
+ ["4/2028","Lớp 9","GĐ 1","Ôn tổng hợp cả 4 kỹ năng.","★ MOCK #2 (Cam 16) + REVISE → ~5.0–5.5","test"],
+ ["5/2028","Lớp 9","GĐ 1","Tổng kết năm; kế hoạch chi tiết lớp 10.","Đánh giá toàn diện","test"],
+ // Lớp 10 — Luyện thi 6.5
+ ["9/2028","Lớp 10","GĐ 2","Luyện đề bấm giờ L+R; từ vựng học thuật.","★ MOCK #3 (Cam 17) + REVISE → ~5.5","test"],
+ ["10/2028","Lớp 10","GĐ 2","Writing Task 2 chuyên sâu; nhờ chấm bài.","★ MOCK #4 (Cam 17) + REVISE → ~5.5–6.0","test"],
+ ["11/2028","Lớp 10","GĐ 2","Speaking full với gia sư; thu âm đánh giá.","★ MOCK #5 (Cam 18) + REVISE → ~6.0","test"],
+ ["12/2028","Lớp 10","GĐ 2","Tối ưu chiến thuật từng kỹ năng; ôn HK1.","★ MOCK #6 (Cam 18) + REVISE → ~6.0–6.5","test"],
+ ["1/2029","Lớp 10","GĐ 2","Luyện cường độ cao, mô phỏng phòng thi.","★ MOCK #7 (Cam 19) → 6.5","test"],
+ ["2/2029","Lớp 10","GĐ 2","Giữ phong độ; ôn nhẹ, nghỉ ngơi hợp lý.","◆ THI THẬT IELTS — mục tiêu 6.5","exam"],
+ ["4–5/2029","Lớp 10","GĐ 2","(Dự phòng) Nếu chưa đạt: ôn & thi lại.","◆ Buffer thi lại (nếu cần)","exam"],
+];
+
+const KEY="ielts_roadmap_l8_v1";
+let done={};
+try{const s=localStorage.getItem(KEY);if(s)done=JSON.parse(s);}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done));}catch(e){}}
+
+document.getElementById('phases').innerHTML=phases.map(p=>`
+  <div class="pcard" style="border-top-color:${p.c}">
+    <div class="ph">${p.ph}</div>
+    <div class="grade">${p.grade}</div>
+    <div class="band" style="background:${p.c}">Mục tiêu ${p.band}</div>
+    <p>${p.d}</p>
+    <div class="yr">📅 ${p.yr}</div>
+  </div>`).join('');
+
+let filter="all";
+function matches(m){
+  if(filter==="all")return true;
+  if(filter==="test")return m[5]==="test"||m[5]==="exam";
+  return m[1]===filter;
+}
+function render(){
+  const tl=document.getElementById('timeline');
+  tl.innerHTML=months.map((m,i)=>{
+    if(!matches(m))return "";
+    const id="m"+i;const isDone=done[id];
+    const mscls=m[5]==="exam"?"ms exam":(m[5]==="test"?"ms test":"ms");
+    return `<div class="m ${isDone?'done':''}" data-id="${id}">
+      <div class="chk" onclick="toggle('${id}')">${isDone?'✓':''}</div>
+      <div><span class="mo">${m[0]}</span><span class="gr" style="background:${G[m[2]]}">${m[1]}</span></div>
+      <div class="fo">${m[3]}</div>
+      <div class="${mscls}">${m[4]}</div>
+    </div>`;
+  }).join('');
+  updateProgress();
+}
+function toggle(id){done[id]=!done[id];if(!done[id])delete done[id];save();
+  const el=document.querySelector(`.m[data-id="${id}"]`);
+  if(el){el.classList.toggle('done',!!done[id]);el.querySelector('.chk').textContent=done[id]?'✓':'';}
+  updateProgress();}
+function updateProgress(){
+  const total=months.length;const d=Object.keys(done).filter(k=>done[k]).length;
+  const pct=Math.round(d/total*100);
+  document.getElementById('pct').textContent=pct+"%";
+  document.getElementById('barfill').style.width=pct+"%";
+  document.getElementById('donecount').textContent=d;
+  document.getElementById('total').textContent=total;
+}
+function resetAll(){done={};save();render();}
+function markTerm(){
+  const now=new Date();const cy=now.getFullYear();const cm=now.getMonth()+1;
+  months.forEach((m,i)=>{
+    const part=m[0].split("–")[0];
+    const [mo,yr]=part.split("/").map(Number);
+    if(yr<cy||(yr===cy&&mo<=cm))done["m"+i]=true;
+  });
+  save();render();
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  if(!e.target.classList.contains('fbtn'))return;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');filter=e.target.dataset.f;render();
+});
+(function(){
+  const exam=new Date(2029,1,1);const now=new Date();
+  let mo=(exam.getFullYear()-now.getFullYear())*12+(exam.getMonth()-now.getMonth());
+  document.getElementById('countdown').textContent=mo>0?mo:"0";
+})();
+(function(){
+  const data=[
+    {l:"Mock1",b:4.75,d:"1/28"},{l:"Mock2",b:5.25,d:"4/28"},{l:"Mock3",b:5.5,d:"9/28"},
+    {l:"Mock4",b:5.75,d:"10/28"},{l:"Mock5",b:6.0,d:"11/28"},{l:"Mock6",b:6.25,d:"12/28"},
+    {l:"Mock7",b:6.5,d:"1/29"},{l:"THI",b:6.5,d:"2/29"}
+  ];
+  const W=980,H=300,pl=42,pr=20,pt=24,pb=54;
+  const minB=4,maxB=7;
+  const x=i=>pl+i*(W-pl-pr)/(data.length-1);
+  const y=b=>pt+(maxB-b)/(maxB-minB)*(H-pt-pb);
+  let grid="";
+  for(let b=4;b<=7;b+=0.5){
+    const yy=y(b);
+    grid+=`<line x1="${pl}" y1="${yy}" x2="${W-pr}" y2="${yy}" stroke="#eef2f9"/>`;
+    grid+=`<text x="${pl-8}" y="${yy+4}" text-anchor="end" font-size="12" fill="#8a94a8">${b.toFixed(1)}</text>`;
+  }
+  const ty=y(6.5);
+  const targetLine=`<line x1="${pl}" y1="${ty}" x2="${W-pr}" y2="${ty}" stroke="#e07b39" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="${pl+8}" y="${ty-8}" text-anchor="start" font-size="12" font-weight="700" fill="#e07b39">Mốc đích 6.5</text>`;
+  let path="";data.forEach((p,i)=>{path+=(i?"L":"M")+x(i)+" "+y(p.b)+" ";});
+  const area=`M${x(0)} ${H-pb} L`+data.map((p,i)=>x(i)+" "+y(p.b)).join(" L")+` L${x(data.length-1)} ${H-pb} Z`;
+  let dots="";data.forEach((p,i)=>{
+    const last=i===data.length-1;
+    dots+=`<circle cx="${x(i)}" cy="${y(p.b)}" r="${last?7:5}" fill="${last?'#e07b39':'#4a90d9'}" stroke="#fff" stroke-width="2"/>`;
+    dots+=`<text x="${x(i)}" y="${y(p.b)-13}" text-anchor="middle" font-size="12" font-weight="700" fill="${last?'#e07b39':'#2e5496'}">${p.b}</text>`;
+    dots+=`<text x="${x(i)}" y="${H-pb+20}" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5a6478">${p.l}</text>`;
+    dots+=`<text x="${x(i)}" y="${H-pb+36}" text-anchor="middle" font-size="10.5" fill="#9aa4b8">${p.d}</text>`;
+  });
+  document.getElementById('chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:100%">
+    <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a90d9" stop-opacity=".22"/><stop offset="1" stop-color="#4a90d9" stop-opacity="0"/>
+    </linearGradient></defs>
+    ${grid}${targetLine}<path d="${area}" fill="url(#ag)"/>
+    <path d="${path}" fill="none" stroke="#4a90d9" stroke-width="3" stroke-linejoin="round"/>${dots}
+  </svg>`;
+})();
+render();
+</script>
+</body>
+</html>
