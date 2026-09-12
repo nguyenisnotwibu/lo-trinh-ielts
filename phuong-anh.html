@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lộ trình IELTS · Phương Anh</title>
+<style>
+:root{--navy:#12324f;--blue:#1f6f8b;--sky:#2fa8c8;--accent:#e0673a;--green:#3c9d6e;--greenbg:#e7f4ec;
+ --bg:#f3f7f8;--card:#fff;--ink:#20303a;--muted:#6b7d88;--line:#dde8ec}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header.hero{background:linear-gradient(135deg,#12324f,#1f6f8b 60%,#2fa8c8);color:#fff;padding:40px 0 90px;position:relative;overflow:hidden}
+header.hero:before{content:"";position:absolute;top:-60px;right:-40px;width:280px;height:280px;background:rgba(255,255,255,.08);border-radius:50%}
+header.hero:after{content:"";position:absolute;bottom:-90px;left:-30px;width:220px;height:220px;background:rgba(255,255,255,.06);border-radius:50%}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;font-weight:600}
+h1{font-size:33px;margin:8px 0 6px;font-weight:800;line-height:1.15}
+.sub{font-size:16px;opacity:.92;max-width:660px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:30px;font-size:13.5px;font-weight:600}
+.badge b{color:#ffd9a0}
+.panel{background:var(--card);border-radius:18px;box-shadow:0 12px 34px rgba(18,50,79,.14);margin-top:-58px;position:relative;z-index:5;padding:22px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:22px;align-items:center}
+.prog-label{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.prog-num{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
+.bar{height:14px;background:#e8eef0;border-radius:10px;overflow:hidden;margin-top:10px}
+.bar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#3c9d6e,#5bc48c);border-radius:10px;transition:width .6s}
+.stat{text-align:center;border-left:1px solid var(--line);padding-left:18px}
+.stat .big{font-size:26px;font-weight:800;color:var(--accent)}.stat .cap{font-size:12.5px;color:var(--muted);font-weight:600}
+section{padding:34px 0 8px}
+.sec-title{font-size:23px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:10px}
+.sec-title .dot{width:11px;height:22px;background:var(--accent);border-radius:4px}
+.sec-desc{color:var(--muted);margin:6px 0 18px;font-size:15px}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pcard{background:var(--card);border-radius:14px;padding:18px 16px;border-top:5px solid;box-shadow:0 4px 14px rgba(18,50,79,.07);transition:.2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(18,50,79,.14)}
+.pcard .ph{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+.pcard .grade{font-size:18px;font-weight:800;margin:2px 0}
+.pcard .band{display:inline-block;font-size:13px;font-weight:800;color:#fff;padding:3px 11px;border-radius:20px;margin:6px 0 10px}
+.pcard p{font-size:13.5px;color:#48606c}.pcard .yr{font-size:12.5px;color:var(--muted);margin-top:8px;font-weight:600}
+.week3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.wc{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 3px 10px rgba(18,50,79,.06);border-left:5px solid var(--sky)}
+.wc h4{font-size:15px;color:var(--navy);margin-bottom:4px}.wc p{font-size:13px;color:#48606c}
+.wc .b{font-size:12px;font-weight:800;color:#fff;background:var(--blue);padding:2px 9px;border-radius:14px;display:inline-block;margin-bottom:7px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.fbtn{border:1.5px solid var(--line);background:#fff;color:var(--muted);font-weight:600;padding:7px 15px;border-radius:22px;cursor:pointer;font-size:13.5px}
+.fbtn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tl{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.m{background:var(--card);border-radius:12px;padding:14px 16px 14px 46px;position:relative;box-shadow:0 3px 10px rgba(18,50,79,.06);border-left:4px solid var(--line)}
+.m.done{background:var(--greenbg);border-left-color:var(--green)}
+.m .chk{position:absolute;left:13px;top:15px;width:22px;height:22px;border-radius:6px;border:2px solid #bcd0d8;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;background:#fff;user-select:none}
+.m.done .chk{background:var(--green);border-color:var(--green)}
+.m .mo{font-weight:800;font-size:15px;color:var(--navy)}
+.m .gr{font-size:11.5px;font-weight:700;color:#fff;padding:1px 8px;border-radius:12px;margin-left:6px}
+.m .fo{font-size:13px;color:#48606c;margin-top:5px}
+.m .ms{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:8px;background:#eaf1f4;color:var(--blue)}
+.m .ms.test{background:#fff2e6;color:var(--accent);border:1px solid #f6d3b3}.m .ms.exam{background:#e0673a;color:#fff}
+.m.done .mo:after{content:" ✓";color:var(--green)}
+.mockwrap{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 4px 14px rgba(18,50,79,.07)}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tip{background:var(--card);border-radius:12px;padding:16px 18px;box-shadow:0 3px 10px rgba(18,50,79,.06);border-left:4px solid #f0a35a}
+.tip h4{font-size:15px;color:var(--navy);margin-bottom:6px}.tip p{font-size:13.5px;color:#48606c}
+.toolbar{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+.tb{border:none;background:var(--navy);color:#fff;padding:9px 18px;border-radius:9px;font-weight:600;cursor:pointer;font-size:13.5px}
+.tb.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
+.note{background:#fff7ec;border:1px solid #f6d3b3;border-radius:10px;padding:12px 16px;font-size:13.5px;color:#8a5a2b;margin-top:14px}
+@media(max-width:760px){.panel{grid-template-columns:1fr}.stat{border-left:none;border-top:1px solid var(--line);padding:12px 0 0}.phases{grid-template-columns:1fr}.week3{grid-template-columns:1fr}.tl{grid-template-columns:1fr}.tips{grid-template-columns:1fr}h1{font-size:26px}}
+@media print{.toolbar,.filters{display:none}header.hero{padding-bottom:40px}.panel{margin-top:16px;box-shadow:none}}
+</style></head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Lộ trình luyện thi IELTS cá nhân</div>
+  <h1>Phương Anh · Lớp 10 (hệ Cambridge) 🎓</h1>
+  <p class="sub">Bảng theo dõi trực quan — bám sát tiến độ từng tháng, lịch thi thử và mục tiêu điểm. Tick vào mỗi tháng khi hoàn thành.</p>
+  <div class="badges">
+    <div class="badge">🎯 Mục tiêu: <b>IELTS 6.5–7.0</b></div>
+    <div class="badge">📅 <b>3 buổi/tuần</b></div>
+    <div class="badge">🎓 Nền <b>Cambridge</b> bổ trợ</div>
+    <div class="badge">🗓️ <b>2026 → đầu 2028</b></div>
+  </div>
+</div></header>
+
+<div class="wrap"><div class="panel">
+  <div>
+    <div class="prog-label">Tiến độ tổng thể</div>
+    <div><span class="prog-num" id="pct">0%</span> <span style="color:var(--muted);font-size:14px">hoàn thành</span></div>
+    <div class="bar"><span id="barfill"></span></div>
+    <div style="font-size:12.5px;color:var(--muted);margin-top:7px"><span id="donecount">0</span>/<span id="total">0</span> tháng đã tick</div>
+  </div>
+  <div class="stat"><div class="big" id="countdown">—</div><div class="cap">tháng đến kỳ thi thật<br>(dự kiến 01/2028)</div></div>
+  <div class="stat"><div class="big">7 + 1</div><div class="cap">bài mock trước khi<br>thi thật</div></div>
+</div></div>
+
+<div class="wrap">
+  <section>
+    <div class="sec-title"><span class="dot"></span>3 giai đoạn</div>
+    <div class="sec-desc">Tận dụng nền Cambridge (từ vựng học thuật, đọc–viết), tập trung vào định dạng & chiến thuật IELTS.</div>
+    <div class="phases" id="phases"></div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Cấu trúc 3 buổi mỗi tuần</div>
+    <div class="sec-desc">Chia theo cụm kỹ năng để cân bằng cả 4 kỹ năng.</div>
+    <div class="week3">
+      <div class="wc"><span class="b">BUỔI 1</span><h4>🎧 Nghe + 📖 Đọc</h4><p>1 dạng Listening + luyện; 1 passage Reading + kỹ thuật skim/scan, T/F/NG.</p></div>
+      <div class="wc"><span class="b">BUỔI 2</span><h4>✍️ Viết</h4><p>Task 1 &amp; Task 2 luân phiên: học cấu trúc → viết → chữa; ôn ngữ pháp học thuật.</p></div>
+      <div class="wc"><span class="b">BUỔI 3</span><h4>🗣️ Nói + Từ vựng</h4><p>Speaking Part 1/2/3 theo chủ đề; collocation học thuật; phát âm.</p></div>
+    </div>
+    <div class="note">💡 <b>Hằng ngày 15–20 phút:</b> ôn flashcard (Anki/Quizlet) + nghe podcast học thuật. Mỗi chủ đề học trên lớp Cambridge → rút 10 từ đưa vào Anki dùng cho IELTS.</div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Tiến độ theo tháng</div>
+    <div class="sec-desc">Nhấn ô vuông để đánh dấu tháng đã hoàn thành. Tiến độ tổng tự cập nhật.</div>
+    <div class="filters" id="filters">
+      <button class="fbtn active" data-f="all">Tất cả</button>
+      <button class="fbtn" data-f="GĐ1">Lớp 10 HK1</button>
+      <button class="fbtn" data-f="GĐ2">Lớp 10 HK2 + Hè</button>
+      <button class="fbtn" data-f="GĐ3">Lớp 11 HK1</button>
+      <button class="fbtn" data-f="test">Chỉ mốc thi</button>
+    </div>
+    <div class="tl" id="timeline"></div>
+    <div class="toolbar">
+      <button class="tb ghost" onclick="markTerm()">✓ Tick đến tháng hiện tại</button>
+      <button class="tb ghost" onclick="resetAll()">↺ Đặt lại</button>
+      <button class="tb" onclick="window.print()">🖨️ In / Lưu PDF</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Đường cong điểm mục tiêu qua các mock</div>
+    <div class="sec-desc">Ghi điểm thực tế vào file Excel để so với đường mục tiêu này.</div>
+    <div class="mockwrap"><div id="chart"></div>
+      <div class="legend"><span><i style="background:#2fa8c8"></i>Band mục tiêu kỳ vọng</span><span><i style="background:#e0673a"></i>Vùng đích 6.5–7.0</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><span class="dot"></span>Bí quyết</div>
+    <div class="tips">
+      <div class="tip"><h4>🎓 Khai thác nền Cambridge</h4><p>Dùng bài học English/Global Perspectives làm nguồn từ vựng & chủ đề luyện IELTS.</p></div>
+      <div class="tip"><h4>✍️ Writing & Speaking cần người chấm</h4><p>Hai kỹ năng quyết định chạm 6.5–7.0 — cần giáo viên/gia sư nhận xét đều.</p></div>
+      <div class="tip"><h4>📓 Giữ "sổ lỗi"</h4><p>Sau mỗi mock ghi 5–10 lỗi hay mắc và ôn lại — bí quyết khiến điểm thật sự lên.</p></div>
+      <div class="tip"><h4>🔄 Linh hoạt</h4><p>Đạt ~6.0 sớm → thi cuối lớp 10. Chậm hơn → dời sang giữa–cuối lớp 11.</p></div>
+    </div>
+  </section>
+</div>
+
+<footer>Lộ trình IELTS cá nhân · Phương Anh · Lớp 10 hệ Cambridge · Mục tiêu 6.5–7.0<br>Đi kèm file Word (chi tiết), Excel (theo dõi) và Vở học sinh in theo tuần.</footer>
+
+<script>
+const G={GĐ1:"#1f6f8b",GĐ2:"#3c9d6e",GĐ3:"#e0673a"};
+const phases=[
+ {ph:"Giai đoạn 1",grade:"Lớp 10 HK1 · Nền & Làm quen IELTS",band:"~5.5",yr:"9/2026 – 1/2027",c:"#1f6f8b",d:"Củng cố B1→B2, học định dạng & chiến thuật cả 4 kỹ năng. Mock #1–2."},
+ {ph:"Giai đoạn 2",grade:"Lớp 10 HK2 · Chiến thuật sâu",band:"~6.0–6.5",yr:"2/2027 – 5/2027 (+Hè)",c:"#3c9d6e",d:"Luyện dạng khó, Writing/Speaking chuyên sâu, mock đều. Hè giữ lửa."},
+ {ph:"Giai đoạn 3",grade:"Lớp 11 HK1 · Luyện thi",band:"6.5–7.0",yr:"9/2027 – 1/2028",c:"#e0673a",d:"Luyện đề cường độ cao, bấm giờ, tối ưu. Thi thật 1–2/2028."},
+];
+const months=[
+ ["9/2026","GĐ1","GĐ1","Định dạng Listening & Reading; Writing Task 1.","Kiểm tra đầu vào","test"],
+ ["10/2026","GĐ1","GĐ1","Reading skim/scan; Writing Task 2 cơ bản; Speaking Part 1.","Test kỹ năng",""],
+ ["11/2026","GĐ1","GĐ1","Listening dạng khó; Speaking Part 2.","★ MOCK #1 (Cam 15) + REVISE","test"],
+ ["12/2026","GĐ1","GĐ1","Ôn HK1; luyện tổng hợp.","Ôn học kỳ 1",""],
+ ["1/2027","GĐ1","GĐ1","Speaking Part 3; Writing đủ dạng.","★ MOCK #2 (Cam 16) + REVISE","test"],
+ ["2/2027","GĐ2","GĐ2","Reading matching; Writing Task 2 phát triển ý.","Test kỹ năng",""],
+ ["3/2027","GĐ2","GĐ2","Listening tăng tốc; Speaking mở rộng ý.","★ MOCK #3 (Cam 17) + REVISE","test"],
+ ["4/2027","GĐ2","GĐ2","Writing Task 1 mọi biểu đồ; collocation.","Chữa Writing hằng tuần",""],
+ ["5/2027","GĐ2","GĐ2","Tổng ôn; kế hoạch lớp 11.","★ MOCK #4 (Cam 18) + REVISE","test"],
+ ["6–8/2027","GĐ2","GĐ2","(Hè) Giữ lửa: nâng Writing & Speaking.","Luyện Writing/Speaking",""],
+ ["9/2027","GĐ3","GĐ3","Luyện đề bấm giờ L+R.","Khởi động lớp 11",""],
+ ["10/2027","GĐ3","GĐ3","Writing chuyên sâu; nhờ chấm.","★ MOCK #5 (Cam 18) + REVISE","test"],
+ ["11/2027","GĐ3","GĐ3","Speaking full với gia sư.","★ MOCK #6 (Cam 19) + REVISE","test"],
+ ["12/2027","GĐ3","GĐ3","Tối ưu chiến thuật; mô phỏng phòng thi.","★ MOCK #7 (Cam 19)","test"],
+ ["1–2/2028","GĐ3","GĐ3","Giữ phong độ; nghỉ ngơi hợp lý.","◆ THI THẬT IELTS — mục tiêu 6.5–7.0","exam"],
+];
+const LBL={GĐ1:"Lớp 10 HK1",GĐ2:"Lớp 10 HK2",GĐ3:"Lớp 11 HK1"};
+const KEY="ielts_pa_v1";let done={};try{const s=localStorage.getItem(KEY);if(s)done=JSON.parse(s);}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done));}catch(e){}}
+document.getElementById('phases').innerHTML=phases.map(p=>`<div class="pcard" style="border-top-color:${p.c}"><div class="ph">${p.ph}</div><div class="grade">${p.grade}</div><div class="band" style="background:${p.c}">Mục tiêu ${p.band}</div><p>${p.d}</p><div class="yr">📅 ${p.yr}</div></div>`).join('');
+let filter="all";
+function matches(m){if(filter==="all")return true;if(filter==="test")return m[5]==="test"||m[5]==="exam";return m[1]===filter;}
+function render(){const tl=document.getElementById('timeline');tl.innerHTML=months.map((m,i)=>{if(!matches(m))return "";const id="m"+i,isDone=done[id];const cls=m[5]==="exam"?"ms exam":(m[5]==="test"?"ms test":"ms");return `<div class="m ${isDone?'done':''}" data-id="${id}"><div class="chk" onclick="toggle('${id}')">${isDone?'✓':''}</div><div><span class="mo">${m[0]}</span><span class="gr" style="background:${G[m[1]]}">${LBL[m[1]]}</span></div><div class="fo">${m[3]}</div><div class="${cls}">${m[4]}</div></div>`;}).join('');upd();}
+function toggle(id){done[id]=!done[id];if(!done[id])delete done[id];save();const el=document.querySelector(`.m[data-id="${id}"]`);if(el){el.classList.toggle('done',!!done[id]);el.querySelector('.chk').textContent=done[id]?'✓':'';}upd();}
+function upd(){const t=months.length,d=Object.keys(done).filter(k=>done[k]).length,pct=Math.round(d/t*100);document.getElementById('pct').textContent=pct+"%";document.getElementById('barfill').style.width=pct+"%";document.getElementById('donecount').textContent=d;document.getElementById('total').textContent=t;}
+function resetAll(){done={};save();render();}
+function markTerm(){const now=new Date(),cy=now.getFullYear(),cm=now.getMonth()+1;months.forEach((m,i)=>{const part=m[0].split("–")[0];const[mo,yr]=part.split("/").map(Number);if(yr<cy||(yr===cy&&mo<=cm))done["m"+i]=true;});save();render();}
+document.getElementById('filters').addEventListener('click',e=>{if(!e.target.classList.contains('fbtn'))return;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');filter=e.target.dataset.f;render();});
+(function(){const exam=new Date(2028,0,1),now=new Date();let mo=(exam.getFullYear()-now.getFullYear())*12+(exam.getMonth()-now.getMonth());document.getElementById('countdown').textContent=mo>0?mo:"0";})();
+(function(){const data=[{l:"M1",b:5.25,d:"11/26"},{l:"M2",b:5.5,d:"1/27"},{l:"M3",b:6.0,d:"3/27"},{l:"M4",b:6.25,d:"5/27"},{l:"M5",b:6.5,d:"10/27"},{l:"M6",b:6.75,d:"11/27"},{l:"M7",b:7.0,d:"12/27"},{l:"THI",b:7.0,d:"1/28"}];
+const W=980,H=300,pl=42,pr=20,pt=24,pb=54,minB=4.5,maxB=7.5;const x=i=>pl+i*(W-pl-pr)/(data.length-1),y=b=>pt+(maxB-b)/(maxB-minB)*(H-pt-pb);
+let grid="";for(let b=4.5;b<=7.5;b+=0.5){const yy=y(b);grid+=`<line x1="${pl}" y1="${yy}" x2="${W-pr}" y2="${yy}" stroke="#e8eef0"/><text x="${pl-8}" y="${yy+4}" text-anchor="end" font-size="12" fill="#8a99a2">${b.toFixed(1)}</text>`;}
+const t1=y(7.0),t2=y(6.5);const band=`<rect x="${pl}" y="${t1}" width="${W-pl-pr}" height="${t2-t1}" fill="#e0673a" opacity="0.10"/><text x="${pl+8}" y="${t1-6}" font-size="12" font-weight="700" fill="#e0673a">Vùng đích 6.5–7.0</text>`;
+let path="";data.forEach((p,i)=>{path+=(i?"L":"M")+x(i)+" "+y(p.b)+" ";});const area=`M${x(0)} ${H-pb} L`+data.map((p,i)=>x(i)+" "+y(p.b)).join(" L")+` L${x(data.length-1)} ${H-pb} Z`;
+let dots="";data.forEach((p,i)=>{const last=i===data.length-1;dots+=`<circle cx="${x(i)}" cy="${y(p.b)}" r="${last?7:5}" fill="${last?'#e0673a':'#2fa8c8'}" stroke="#fff" stroke-width="2"/><text x="${x(i)}" y="${y(p.b)-13}" text-anchor="middle" font-size="12" font-weight="700" fill="${last?'#e0673a':'#1f6f8b'}">${p.b}</text><text x="${x(i)}" y="${H-pb+20}" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5a6a72">${p.l}</text><text x="${x(i)}" y="${H-pb+36}" text-anchor="middle" font-size="10.5" fill="#9aa8b0">${p.d}</text>`;});
+document.getElementById('chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:100%"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fa8c8" stop-opacity=".22"/><stop offset="1" stop-color="#2fa8c8" stop-opacity="0"/></linearGradient></defs>${grid}${band}<path d="${area}" fill="url(#ag)"/><path d="${path}" fill="none" stroke="#2fa8c8" stroke-width="3" stroke-linejoin="round"/>${dots}</svg>`;})();
+render();
+</script></body></html>
