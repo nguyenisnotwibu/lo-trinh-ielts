@@ -76,7 +76,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <div class="badge">🎯 Mục tiêu: <b>IELTS 6.5–7.0</b></div>
     <div class="badge">📅 <b>3 buổi/tuần</b></div>
     <div class="badge">🎓 Nền <b>Cambridge</b> bổ trợ</div>
-    <div class="badge">🗓️ <b>2026 → đầu 2028</b></div>
+    <div class="badge">🗓️ <b>2026 → 2029</b> (~3 năm)</div>
   </div>
 </div></header>
 
@@ -87,8 +87,8 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <div class="bar"><span id="barfill"></span></div>
     <div style="font-size:12.5px;color:var(--muted);margin-top:7px"><span id="donecount">0</span>/<span id="total">0</span> tháng đã tick</div>
   </div>
-  <div class="stat"><div class="big" id="countdown">—</div><div class="cap">tháng đến kỳ thi thật<br>(dự kiến 01/2028)</div></div>
-  <div class="stat"><div class="big">7 + 1</div><div class="cap">bài mock trước khi<br>thi thật</div></div>
+  <div class="stat"><div class="big" id="countdown">—</div><div class="cap">tháng đến kỳ thi thật<br>(cuối lớp 12, ~3–5/2029)</div></div>
+  <div class="stat"><div class="big">8 + 1</div><div class="cap">bài mock trước khi<br>thi thật</div></div>
 </div></div>
 
 <div class="wrap">
@@ -114,9 +114,9 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <div class="sec-desc">Nhấn ô vuông để đánh dấu tháng đã hoàn thành. Tiến độ tổng tự cập nhật.</div>
     <div class="filters" id="filters">
       <button class="fbtn active" data-f="all">Tất cả</button>
-      <button class="fbtn" data-f="GĐ1">Lớp 10 HK1</button>
-      <button class="fbtn" data-f="GĐ2">Lớp 10 HK2 + Hè</button>
-      <button class="fbtn" data-f="GĐ3">Lớp 11 HK1</button>
+      <button class="fbtn" data-f="GĐ1">Lớp 10</button>
+      <button class="fbtn" data-f="GĐ2">Lớp 11</button>
+      <button class="fbtn" data-f="GĐ3">Lớp 12</button>
       <button class="fbtn" data-f="test">Chỉ mốc thi</button>
     </div>
     <div class="tl" id="timeline"></div>
@@ -151,28 +151,38 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
 <script>
 const G={GĐ1:"#1f6f8b",GĐ2:"#3c9d6e",GĐ3:"#e0673a"};
 const phases=[
- {ph:"Giai đoạn 1",grade:"Lớp 10 HK1 · Nền & Làm quen IELTS",band:"~5.5",yr:"9/2026 – 1/2027",c:"#1f6f8b",d:"Củng cố B1→B2, học định dạng & chiến thuật cả 4 kỹ năng. Mock #1–2."},
- {ph:"Giai đoạn 2",grade:"Lớp 10 HK2 · Chiến thuật sâu",band:"~6.0–6.5",yr:"2/2027 – 5/2027 (+Hè)",c:"#3c9d6e",d:"Luyện dạng khó, Writing/Speaking chuyên sâu, mock đều. Hè giữ lửa."},
- {ph:"Giai đoạn 3",grade:"Lớp 11 HK1 · Luyện thi",band:"6.5–7.0",yr:"9/2027 – 1/2028",c:"#e0673a",d:"Luyện đề cường độ cao, bấm giờ, tối ưu. Thi thật 1–2/2028."},
+ {ph:"Giai đoạn 1",grade:"Lớp 10 · Nền tảng & Làm quen IELTS",band:"~5.0–5.5",yr:"9/2026 – 5/2027",c:"#1f6f8b",d:"Củng cố B1→B2, học định dạng & chiến thuật 4 kỹ năng, ưu tiên NGHE. Mock #1–2."},
+ {ph:"Giai đoạn 2",grade:"Lớp 11 · Chiến thuật chuyên sâu",band:"~6.0–6.5",yr:"9/2027 – 5/2028",c:"#3c9d6e",d:"Luyện dạng khó, Writing/Speaking sâu, mock đều (#3–5). Hè giữ lửa."},
+ {ph:"Giai đoạn 3",grade:"Lớp 12 · Luyện thi & thi thật",band:"6.5–7.0+",yr:"9/2028 – 5/2029",c:"#e0673a",d:"Luyện đề cường độ cao, bấm giờ, tối ưu. Mock #6–8. Thi cuối lớp 12 (3–5/2029)."},
 ];
 const months=[
- ["9/2026","GĐ1","GĐ1","Định dạng Listening & Reading; Writing Task 1.","Kiểm tra đầu vào","test"],
- ["10/2026","GĐ1","GĐ1","Reading skim/scan; Writing Task 2 cơ bản; Speaking Part 1.","Test kỹ năng",""],
- ["11/2026","GĐ1","GĐ1","Listening dạng khó; Speaking Part 2.","★ MOCK #1 (Cam 15) + REVISE","test"],
+ ["9/2026","GĐ1","GĐ1","Định dạng L&R; Writing Task 1; bắt đầu chép chính tả.","Kiểm tra đầu vào","test"],
+ ["10/2026","GĐ1","GĐ1","Reading skim/scan; Writing Task 2 cơ bản; Speaking P1.","Test kỹ năng",""],
+ ["11/2026","GĐ1","GĐ1","Listening dạng câu hỏi; Speaking P2.","Mini-test",""],
  ["12/2026","GĐ1","GĐ1","Ôn HK1; luyện tổng hợp.","Ôn học kỳ 1",""],
- ["1/2027","GĐ1","GĐ1","Speaking Part 3; Writing đủ dạng.","★ MOCK #2 (Cam 16) + REVISE","test"],
- ["2/2027","GĐ2","GĐ2","Reading matching; Writing Task 2 phát triển ý.","Test kỹ năng",""],
- ["3/2027","GĐ2","GĐ2","Listening tăng tốc; Speaking mở rộng ý.","★ MOCK #3 (Cam 17) + REVISE","test"],
- ["4/2027","GĐ2","GĐ2","Writing Task 1 mọi biểu đồ; collocation.","Chữa Writing hằng tuần",""],
- ["5/2027","GĐ2","GĐ2","Tổng ôn; kế hoạch lớp 11.","★ MOCK #4 (Cam 18) + REVISE","test"],
- ["6–8/2027","GĐ2","GĐ2","(Hè) Giữ lửa: nâng Writing & Speaking.","Luyện Writing/Speaking",""],
- ["9/2027","GĐ3","GĐ3","Luyện đề bấm giờ L+R.","Khởi động lớp 11",""],
- ["10/2027","GĐ3","GĐ3","Writing chuyên sâu; nhờ chấm.","★ MOCK #5 (Cam 18) + REVISE","test"],
- ["11/2027","GĐ3","GĐ3","Speaking full với gia sư.","★ MOCK #6 (Cam 19) + REVISE","test"],
- ["12/2027","GĐ3","GĐ3","Tối ưu chiến thuật; mô phỏng phòng thi.","★ MOCK #7 (Cam 19)","test"],
- ["1–2/2028","GĐ3","GĐ3","Giữ phong độ; nghỉ ngơi hợp lý.","◆ THI THẬT IELTS — mục tiêu 6.5–7.0","exam"],
+ ["1/2027","GĐ1","GĐ1","Speaking P3; Writing đủ dạng.","★ MOCK #1 (Cam 15) + REVISE","test"],
+ ["2/2027","GĐ1","GĐ1","Reading matching; collocation.","Mini-test",""],
+ ["3/2027","GĐ1","GĐ1","Listening tăng tốc; luyện phát âm.","Mini-test",""],
+ ["4/2027","GĐ1","GĐ1","Writing Task 1 mọi biểu đồ.","Chữa Writing hằng tuần",""],
+ ["5/2027","GĐ1","GĐ1","Tổng ôn năm; kế hoạch lớp 11.","★ MOCK #2 (Cam 16) + REVISE","test"],
+ ["9/2027","GĐ2","GĐ2","Khởi động lớp 11; đề bấm giờ nhẹ.","Đánh giá đầu năm",""],
+ ["10/2027","GĐ2","GĐ2","Reading dạng khó; Writing T2 phát triển ý.","Test kỹ năng",""],
+ ["11/2027","GĐ2","GĐ2","Speaking mở rộng ý; Listening S3–4.","★ MOCK #3 (Cam 17) + REVISE","test"],
+ ["12/2027","GĐ2","GĐ2","Ôn HK1; luyện tổng hợp.","Ôn học kỳ 1",""],
+ ["1/2028","GĐ2","GĐ2","Writing nâng cao; đủ dạng đề.","Chữa Writing hằng tuần",""],
+ ["2/2028","GĐ2","GĐ2","Rà soát điểm yếu 4 kỹ năng.","★ MOCK #4 (Cam 18) + REVISE","test"],
+ ["3/2028","GĐ2","GĐ2","L&R tốc độ cao; collocation nâng cao.","Mini-test",""],
+ ["4/2028","GĐ2","GĐ2","Speaking chuyên sâu; Part 3 lập luận.","Chữa Speaking",""],
+ ["5/2028","GĐ2","GĐ2","Tổng ôn năm; kế hoạch lớp 12.","★ MOCK #5 (Cam 19) + REVISE","test"],
+ ["9/2028","GĐ3","GĐ3","Luyện đề bấm giờ toàn phần.","Khởi động lớp 12",""],
+ ["10/2028","GĐ3","GĐ3","Writing tối ưu; nhờ chấm định kỳ.","★ MOCK #6 (Cam 17) + REVISE","test"],
+ ["11/2028","GĐ3","GĐ3","Speaking full với gia sư; thu âm.","Chữa Speaking",""],
+ ["12/2028","GĐ3","GĐ3","Mô phỏng phòng thi; ôn HK1.","★ MOCK #7 (Cam 18) + REVISE","test"],
+ ["1/2029","GĐ3","GĐ3","Luyện đề cường độ cao.","Luyện đề",""],
+ ["2/2029","GĐ3","GĐ3","Rà soát điểm yếu; chốt chiến thuật.","★ MOCK #8 (Cam 19)","test"],
+ ["3–5/2029","GĐ3","GĐ3","Giữ phong độ; nghỉ ngơi hợp lý.","◆ THI THẬT IELTS (cuối lớp 12) — 6.5–7.0+","exam"],
 ];
-const LBL={GĐ1:"Lớp 10 HK1",GĐ2:"Lớp 10 HK2",GĐ3:"Lớp 11 HK1"};
+const LBL={GĐ1:"Lớp 10",GĐ2:"Lớp 11",GĐ3:"Lớp 12"};
 const KEY="ielts_pa_v1";let done={};try{const s=localStorage.getItem(KEY);if(s)done=JSON.parse(s);}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(done));}catch(e){}}
 document.getElementById('phases').innerHTML=phases.map(p=>`<div class="pcard" style="border-top-color:${p.c}"><div class="ph">${p.ph}</div><div class="grade">${p.grade}</div><div class="band" style="background:${p.c}">Mục tiêu ${p.band}</div><p>${p.d}</p><div class="yr">📅 ${p.yr}</div></div>`).join('');
@@ -184,8 +194,8 @@ function upd(){const t=months.length,d=Object.keys(done).filter(k=>done[k]).leng
 function resetAll(){done={};save();render();}
 function markTerm(){const now=new Date(),cy=now.getFullYear(),cm=now.getMonth()+1;months.forEach((m,i)=>{const part=m[0].split("–")[0];const[mo,yr]=part.split("/").map(Number);if(yr<cy||(yr===cy&&mo<=cm))done["m"+i]=true;});save();render();}
 document.getElementById('filters').addEventListener('click',e=>{if(!e.target.classList.contains('fbtn'))return;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');filter=e.target.dataset.f;render();});
-(function(){const exam=new Date(2028,0,1),now=new Date();let mo=(exam.getFullYear()-now.getFullYear())*12+(exam.getMonth()-now.getMonth());document.getElementById('countdown').textContent=mo>0?mo:"0";})();
-(function(){const data=[{l:"M1",b:5.25,d:"11/26"},{l:"M2",b:5.5,d:"1/27"},{l:"M3",b:6.0,d:"3/27"},{l:"M4",b:6.25,d:"5/27"},{l:"M5",b:6.5,d:"10/27"},{l:"M6",b:6.75,d:"11/27"},{l:"M7",b:7.0,d:"12/27"},{l:"THI",b:7.0,d:"1/28"}];
+(function(){const exam=new Date(2029,2,1),now=new Date();let mo=(exam.getFullYear()-now.getFullYear())*12+(exam.getMonth()-now.getMonth());document.getElementById('countdown').textContent=mo>0?mo:"0";})();
+(function(){const data=[{l:"M1",b:5.0,d:"1/27"},{l:"M2",b:5.5,d:"5/27"},{l:"M3",b:6.0,d:"11/27"},{l:"M4",b:6.25,d:"2/28"},{l:"M5",b:6.5,d:"5/28"},{l:"M6",b:6.5,d:"10/28"},{l:"M7",b:6.75,d:"12/28"},{l:"M8",b:7.0,d:"2/29"},{l:"THI",b:7.0,d:"5/29"}];
 const W=980,H=300,pl=42,pr=20,pt=24,pb=54,minB=4.5,maxB=7.5;const x=i=>pl+i*(W-pl-pr)/(data.length-1),y=b=>pt+(maxB-b)/(maxB-minB)*(H-pt-pb);
 let grid="";for(let b=4.5;b<=7.5;b+=0.5){const yy=y(b);grid+=`<line x1="${pl}" y1="${yy}" x2="${W-pr}" y2="${yy}" stroke="#e8eef0"/><text x="${pl-8}" y="${yy+4}" text-anchor="end" font-size="12" fill="#8a99a2">${b.toFixed(1)}</text>`;}
 const t1=y(7.0),t2=y(6.5);const band=`<rect x="${pl}" y="${t1}" width="${W-pl-pr}" height="${t2-t1}" fill="#e0673a" opacity="0.10"/><text x="${pl+8}" y="${t1-6}" font-size="12" font-weight="700" fill="#e0673a">Vùng đích 6.5–7.0</text>`;
